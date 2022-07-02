@@ -23,6 +23,8 @@ section
 
 slider
 
+swipper
+
 list__ul
 
 p
@@ -229,6 +231,12 @@ a {
         display: flex;
         align-items: center;
     }
+
+    .contact__text {
+        a {
+            text-decoration: none;
+        }
+    }
 }
 
 .container {
@@ -249,10 +257,6 @@ a {
 
 section {
     margin-bottom: 136px;
-
-    img {
-        width: 100%;
-    }
 
     .section__title {
         font-size: 32px;
@@ -293,6 +297,8 @@ section {
         width: 36px;
         height: 36px;
 
+        z-index: 100;
+
         &:first-child {
             left: -75px;
         }
@@ -316,6 +322,22 @@ section {
     
     .slider__arrow_left {
         transform: rotate(180deg);
+    }
+}
+
+.swipper {
+    .swiper-container {
+        overflow-x: hidden;
+    }
+
+    .swiper-slide {
+        text-align: center;
+
+        opacity: 0;
+        
+        &.swiper-slide-visible {
+            opacity: 1;
+        }
     }
 }
 
@@ -357,8 +379,22 @@ section {
     top: -100%;
     left: 0;
 
+    transition: 1s;
+
     width: 100%;
     height: 100%;
+
+    @keyframes blackout-modal {
+        0% {
+            background: none;
+        }
+        50% {
+            background: none;
+        }
+        100% {
+            background: rgba(0, 0, 0, 0.5);
+        }
+    }
 
     &._active {
         background: rgba(0, 0, 0, 0.5);
@@ -368,6 +404,10 @@ section {
         padding: 25px 65px;
 
         max-width: 635px;
+
+        @media (max-width: 768px) {
+            width: 90%;
+        }
     }
 
     .modal__title {

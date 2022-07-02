@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Меркурий</title>
 </head>
@@ -37,7 +38,7 @@
                                 </svg>                                                                                                                                                           
                             </div>
                             <div class="contact__text">
-                                globus_2022@list.ru
+                                <a href="mailto:globus_2022@list.ru">globus_2022@list.ru</a>
                             </div>
                         </li>
                         <li class="contact__item">
@@ -56,7 +57,9 @@
     
                     <div class="header__telephone">
                         <div class="header__number">
-                            +7 (961) 112-87-93
+                            <a href="tel:+79611128793">
+                                +7 (961) 112-87-93
+                            </a>
                         </div>
                         <button class="header__button__telephone button__telephone button">
                             <svg width="30" height="33" viewBox="0 0 30 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -127,30 +130,47 @@
                     <div class="section__title text-center">
                         Обслуживаем автомобили брендов
                     </div>
-                    <div class="service-brand_slider slider">
+                    <div class="service-brand_slider slider swipper">
                         <div class="slider__arrow slider__arrow_left">
                             <svg class="slider__arrow_svg" width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M18.5607 13.0607C19.1464 12.4749 19.1464 11.5251 18.5607 10.9393L9.01472 1.3934C8.42893 0.807611 7.47918 0.807611 6.8934 1.3934C6.30761 1.97919 6.30761 2.92893 6.8934 3.51472L15.3787 12L6.8934 20.4853C6.30761 21.0711 6.30761 22.0208 6.8934 22.6066C7.47918 23.1924 8.42893 23.1924 9.01472 22.6066L18.5607 13.0607ZM0 13.5H17.5V10.5H0L0 13.5Z" fill="#141515"/>
                             </svg>                                                     
                         </div>
-                        <ul class="service-brand_slider_items">
-                            <li class="service-brand_slider_item">
-                                <img class="service-brand_img" src="img/maz-160.png" alt="">
-                            </li>
-                            <li class="service-brand_slider_item">
-                                <img class="service-brand_img" src="img/kamaz-160.png" alt="">
-                            </li>
-                            <li class="service-brand_slider_item">
-                                <img class="service-brand_img" src="img/gaz-160.png" alt="">
-                            </li>
-                            <li class="service-brand_slider_item">
-                                <img class="service-brand_img" src="img/scania-160.png" alt="">
-                            </li>
-                            <li class="service-brand_slider_item">
-                                <img class="service-brand_img" src="img/daf-160.png" alt="">
-                            </li>
-                        </ul>
-                        <div class="slider__arrow">
+                        <div class="service-brand_slider_container swiper-container">
+                            <ul class="service-brand_slider_items swiper-wrapper">
+                                <li class="service-brand_slider_item swiper-slide">
+                                    <img class="service-brand_img" src="img/maz-160.png" alt="">
+                                </li>
+                                <li class="service-brand_slider_item swiper-slide">
+                                    <img class="service-brand_img" src="img/kamaz-160.png" alt="">
+                                </li>
+                                <li class="service-brand_slider_item swiper-slide">
+                                    <img class="service-brand_img" src="img/gaz-160.png" alt="">
+                                </li>
+                                <li class="service-brand_slider_item swiper-slide">
+                                    <img class="service-brand_img" src="img/scania-160.png" alt="">
+                                </li>
+                                <li class="service-brand_slider_item swiper-slide">
+                                    <img class="service-brand_img" src="img/daf-160.png" alt="">
+                                </li>
+                                <li class="service-brand_slider_item swiper-slide">
+                                    <img class="service-brand_img" src="img/renault-160.png" alt="">
+                                </li>
+                                <li class="service-brand_slider_item swiper-slide">
+                                    <img class="service-brand_img" src="img/volvo-160.png" alt="">
+                                </li>
+                                <li class="service-brand_slider_item swiper-slide">
+                                    <img class="service-brand_img" src="img/ford-160.png" alt="">
+                                </li>
+                                <li class="service-brand_slider_item swiper-slide">
+                                    <img class="service-brand_img" src="img/man-160.png" alt="">
+                                </li>
+                                <li class="service-brand_slider_item swiper-slide">
+                                    <img class="service-brand_img" src="img/shacman-160.png" alt="">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="slider__arrow slider__arrow_right">
                             <svg class="slider__arrow_svg" width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M18.5607 13.0607C19.1464 12.4749 19.1464 11.5251 18.5607 10.9393L9.01472 1.3934C8.42893 0.807611 7.47918 0.807611 6.8934 1.3934C6.30761 1.97919 6.30761 2.92893 6.8934 3.51472L15.3787 12L6.8934 20.4853C6.30761 21.0711 6.30761 22.0208 6.8934 22.6066C7.47918 23.1924 8.42893 23.1924 9.01472 22.6066L18.5607 13.0607ZM0 13.5H17.5V10.5H0L0 13.5Z" fill="#141515"/>
                             </svg>
@@ -353,7 +373,7 @@
                                     </svg>                                                                                                                                                           
                                 </div>
                                 <div class="contact__text">
-                                    globus_2022@list.ru
+                                    <a href="mailto:globus_2022@list.ru">globus_2022@list.ru</a>
                                 </div>
                             </li>
                             <li class="contact__item">
@@ -382,7 +402,9 @@
                                     </svg>                                                                                          
                                 </div>
                                 <div class="contact__text">
-                                    +7 (961) 112-87-93
+                                    <a href="tel:+79611128793">
+                                        +7 (961) 112-87-93
+                                    </a>
                                 </div>
                             </li>
                             <li class="contact__item">
@@ -419,9 +441,9 @@
                     Мастер позвонит вам и ответит на все вопросы
                 </div>
                 <div class="modal__inputs">
-                    <input class="modal__input input" type="text" placeholder="Укажите ваше имя">
-                    <input class="modal__input input" type="tel" placeholder="Номер телефона">
-                    <textarea class="modal__textarea textarea" placeholder="Ваше сообщение"></textarea>
+                    <input class="modal__input modal__input_name input" type="text" placeholder="Укажите ваше имя">
+                    <input class="modal__input input modal__input_telephone" type="tel" placeholder="Номер телефона">
+                    <textarea class="modal__textarea modal__input_text textarea" placeholder="Ваше сообщение"></textarea>
                 </div>
                 <div class="modal__consent">
                     <label for="consent" class="input-checkbox">
@@ -445,6 +467,8 @@
             </svg>                
         </div>
     </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script async src="js/script.js"></script>
 </body>
 </html>

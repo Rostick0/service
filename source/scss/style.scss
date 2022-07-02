@@ -53,6 +53,10 @@ footer
     .header__number {
         font-size: 28px;
         font-weight: 700;
+
+        a {
+            text-decoration: none;
+        }
     }
 
     .header__telephone {
@@ -119,12 +123,16 @@ footer
 
 .service-brand {
     
-    .service-brand_slider_items {
-        display: inline-grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-gap: 45px;
+    // .service-brand_slider_items {
+    //     display: inline-grid;
+    //     grid-template-columns: repeat(5, 1fr);
+    //     grid-gap: 45px;
         
-        margin: 0 auto;
+    //     margin: 0 auto;
+    // }
+
+    .service-brand_slider_container {
+        min-width: 0;
     }
 }
 
@@ -139,12 +147,37 @@ footer
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 40px 30px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
     .services__list_item {
         display: flex;
         align-items: center;
         flex-direction: column;
+
+        &:nth-last-child(2) {
+            grid-column: 2;
+
+            @media (max-width: 768px) {
+                grid-column: 1;
+            }
+        }
+
+        &:last-child {
+            grid-column: 3;
+
+            @media (max-width: 768px) {
+                grid-column: 2;
+            }
+        }
+
+    }
+
+    .services__list_img {
+        width: 100%;
     }
 
     .services__list_name {
@@ -165,9 +198,11 @@ footer
     }
 
     .services__list_price {
-        margin-top: 20px;
-
         color: #141515;
+
+        cursor: pointer;
+
+        margin-top: 20px;
     }
 }
 
@@ -181,6 +216,10 @@ footer
 
     .cooperation__image {
         flex: 0 0 40%;
+
+        img {
+            width: 100%;
+        }
     }
 
     .cooperation_text {
@@ -219,6 +258,10 @@ footer
 
     .parts__image {
         flex: 0 0 50%;
+
+        img {
+            width: 100%;
+        }
     }
 
     .parts__text {
@@ -235,6 +278,10 @@ footer
 
     .oils__image {
         flex: 0 0 50%;
+
+        img {
+            width: 100%;
+        }
     }
 
     .oils_text {
