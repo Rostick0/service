@@ -26,6 +26,14 @@ const throttle = (func, ms) => {
 
 
 
+// ленивая загрузка
+
+new LazyLoad({
+    elements_selector: "img"
+});
+
+
+
 // скролл навигации
 
 const navigationLinks = document.querySelectorAll('.navigation__link[data-goto]');
@@ -161,13 +169,6 @@ if (arrowToTop) {
 const serviceBrand = document.querySelector('.service-brand');
 
 if (serviceBrand) {
-    // const sliderArrowLeft = serviceBrand.querySelector('.slider__arrow_left');
-    // const sliderArrowRight = serviceBrand.querySelector('.slider__arrow_right');
-
-    // const serviceBrandSliderItems = document.querySelectorAll('.service-brand_slider_item');
-
-    let counter = 0;
-
     new Swiper('.service-brand_slider_container', {
         breakpoints: {
             320: {
