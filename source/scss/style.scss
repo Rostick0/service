@@ -213,6 +213,9 @@ footer
 
 .cooperation {
 
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+    }
 
     .cooperation__image {
         flex: 0 0 40%;
@@ -262,6 +265,10 @@ footer
         img {
             width: 100%;
         }
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
     }
 
     .parts__text {
@@ -276,10 +283,18 @@ footer
 
 .oils {
 
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+    }
+
     .oils__image {
         flex: 0 0 50%;
 
         img {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
             width: 100%;
         }
     }
@@ -303,6 +318,10 @@ footer
 
     .contacts__content {
         width: 100%;
+
+        @media (max-width: 768px) {
+            flex-direction: column-reverse;
+        }
     }
 
     .contacts__map {
