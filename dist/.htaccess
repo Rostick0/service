@@ -1,3 +1,0 @@
-Redirect 301 /http/ http://%{HTTP_HOST}
-
-ErrorDocument 404 http://%{HTTP_HOST}

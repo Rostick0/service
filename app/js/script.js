@@ -28,14 +28,6 @@ const throttle = (func, ms) => {
     }
 }
 
-// function addOrRemoveClass(elem, style) {
-//     if (elem.classList.contains(style)) {
-//         elem.classList.remove(style);
-//     }
-//     elem.classList.add(style);
-// }
-
-
 
 
 // ленивая загрузка
