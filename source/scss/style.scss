@@ -35,6 +35,26 @@ footer
         margin-bottom: 24px;
     
         @media (max-width: 768px) {
+            background: #C3C4C4;
+
+            display: flex;
+            align-items: center;
+
+            padding: 10px;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 101;
+        }
+    }
+
+    .header__logo {
+
+        @media (max-width: 768px) {
             display: none;
         }
     }
@@ -46,7 +66,7 @@ footer
     .header__contact {
         
         @media (max-width: 768px) {
-            
+            display: none;
         }
     }
     
@@ -57,6 +77,10 @@ footer
         a {
             text-decoration: none;
         }
+
+        @media (max-width: 768px) {
+            display: none;
+        }
     }
 
     .header__telephone {
@@ -65,6 +89,96 @@ footer
         align-items: flex-end;
         justify-content: end;
         row-gap: 14px;
+    }
+
+    .header__button__telephone {
+        @media (max-width: 768px) {  
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    .button__telephone_text {
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+    
+    .header__company-name {
+        @media (min-width: 768px) {
+            display: none;
+        }
+    } 
+
+    .header__burger-menu {
+        background: #DD2A1B;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        padding: 10px;
+
+        width: 50px;
+        height: 50px;
+
+        .header__burger-menu_item {
+            background: #FEFEFE;
+
+            content: "";
+
+            opacity: 1;
+
+            transition: 200ms;
+
+            width: 100%;
+            height: 4px;
+        }
+
+        &::before {
+            background: #FEFEFE;
+
+            content: "";
+
+            transition: 200ms;
+
+            width: 100%;
+            height: 4px;
+        }
+
+        &::after {
+            background: #FEFEFE;
+
+            content: "";
+
+            transition: 200ms;
+
+            width: 100%;
+            height: 4px;
+        }
+
+        &._active {
+
+            .header__burger-menu_item {
+                opacity: 0;
+            }
+
+            &::before {
+                transform: rotate(45deg) translate(50%, 75%);
+
+                margin-left: -25%;
+            }
+
+            &::after {
+                transform: rotate(-45deg) translate(50%, -75%);
+
+                margin-left: -25%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            display: none;
+        }
     }
 }
 
@@ -77,18 +191,39 @@ footer
     background: #11161D;
 
     top: 0;
-    left: 0;
+    right: 0;
 
     margin-bottom: 50px;
 
+    transition: 500ms;
+
     width: 100%;
 
-    z-index: 90;
+    z-index: 101;
+
+    @media (max-width: 768px) {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        
+
+        width: 80%;
+        height: 100%;
+
+        &._right-0 {
+            right: 0;
+        }
+    }
 
     .navigation__items {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         grid-gap: 30px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            grid-gap: 15px;
+        }
     }
     
     .navigation__link {
@@ -117,26 +252,9 @@ footer
 
 
 
-// cooperation 
-
-.cooperation {
-
-}
-
-
-
-
 // service-brand
 
 .service-brand {
-    
-    // .service-brand_slider_items {
-    //     display: inline-grid;
-    //     grid-template-columns: repeat(5, 1fr);
-    //     grid-gap: 45px;
-        
-    //     margin: 0 auto;
-    // }
 
     .service-brand_slider_container {
         min-width: 0;
@@ -157,6 +275,7 @@ footer
 
         @media (max-width: 768px) {
             grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px 10px;
         }
     }
 
@@ -202,6 +321,10 @@ footer
 
         width: 100%;
         height: 60px;
+
+        @media (max-width: 768px) {
+            font-size: 16px;
+        }
     }
 
     .services__list_price {
@@ -210,6 +333,10 @@ footer
         cursor: pointer;
 
         margin-top: 20px;
+
+        @media (max-width: 768px) {
+            font-size: 14px;
+        }
     }
 }
 

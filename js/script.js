@@ -1,6 +1,6 @@
 // глобальные переменные
 
-const BACKEND_URL = 'http://service/http';
+const BACKEND_URL = `${document.URL}http`;
 const main = document.querySelector('.main');
 
 // глобальные функции
@@ -27,6 +27,13 @@ const throttle = (func, ms) => {
 
     }
 }
+
+// function addOrRemoveClass(elem, style) {
+//     if (elem.classList.contains(style)) {
+//         elem.classList.remove(style);
+//     }
+//     elem.classList.add(style);
+// }
 
 
 
@@ -75,6 +82,14 @@ if (navigationLinks) {
                 //     removeActive(personLanguage);
                 //     document.body.classList.remove('_lock');
                 // }
+
+                if (headerBurgerMenu) {
+                    headerBurgerMenu.classList.toggle('_active');
+                }
+
+                if (navigation) {
+                    navigation.classList.toggle('_right-0');
+                }
 
                 window.scrollTo({
                     top: gotoBlockValue,
@@ -125,7 +140,7 @@ const navigationOffsetTop = navigation.offsetTop;
 if (navigation) {
 
     window.addEventListener('scroll', throttle(function() {
-        if (window.screen.width < 768) return;
+        if (window.screen.width <= 768) return;
 
         if (pageYOffset >= navigationOffsetTop) {
             navigation.style.position = 'fixed';
@@ -136,7 +151,7 @@ if (navigation) {
         main.style.marginTop = '0';
         navigation.style.position = 'static';
         return;
-    }, 50));
+    }, 20));
 }
 
 
@@ -161,9 +176,7 @@ if (navigation) {
             method: 'POST',
             body: JSON.stringify(data)
         })
-            .then(response => response.json())
-            .then(json => {
-                console.log(json);
+            .then(response => {
                 removeModal();
             })
     }
@@ -288,21 +301,18 @@ if (navigation) {
 
 
 
-// слайдер
+// слайдер (Обслуживаем автомобили брендов)
 
-const serviceBrand = document.querySelector('.service-brand');
+const serviceBrandSlider = document.querySelector('.service-brand_slider_container');
 
-if (serviceBrand) {
+if (serviceBrandSlider) {
     new Swiper('.service-brand_slider_container', {
         breakpoints: {
-            320: {
+            280: {
                 slidesPerView: 1,
             },
-            400: {
-                slidesPerView: 2,
-            },
             576: {
-                slidesPerView: 3,
+                slidesPerView: 2,
             },
             1280: {
                 slidesPerView: 5,
@@ -324,4 +334,51 @@ if (serviceBrand) {
         }
     })
   
+}
+
+// слайдер (Отзывы)
+
+const reviewsSlider = document.querySelector('.reviews_slider_container');
+
+if (reviewsSlider) {
+    new Swiper('.reviews_slider_container', {
+        slidesPerView: 1,
+        loop: true,
+        lazy: {
+            loadOnTransitionStart: true,
+            loadPrevNext: true
+        },
+        preloadImages: true,
+        watchSlidesProgress: true,
+        watchSlidesVisibility: false,
+        navigation: {
+            nextEl: '.reviews_slider__arrow_right',
+            prevEl: '.reviews_slider__arrow_left'
+        }
+    })
+  
+}
+
+
+
+
+
+// бургер меню 
+
+const headerBurgerMenu = document.querySelector('.header__burger-menu');
+
+if (headerBurgerMenu && navigation) {
+    headerBurgerMenu.addEventListener('click', e => {
+        // addOrRemoveClass(headerBurgerMenu, '_active');
+
+        // addOrRemoveClass(navigation, '_right-0');
+
+        headerBurgerMenu.classList.toggle('_active');
+        navigation.classList.toggle('_right-0');
+
+        // if (navigation.classList.contains('_right-0')) {
+        //     navigation.classList.remove('_right-0');
+        // }
+        // navigation.classList.add('_right-0');
+    })
 }
