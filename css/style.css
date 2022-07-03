@@ -109,6 +109,15 @@ a {
     row-gap: 12px;
     padding: 85px 0 35px 8%;
     width: 40%; }
+    @media (max-width: 768px) {
+      .banner .banner__text {
+        padding-top: 64px;
+        padding-bottom: 32px;
+        width: 80%; } }
+    @media (max-width: 480px) {
+      .banner .banner__text {
+        padding: 40px 24px 28px;
+        width: 100%; } }
   .banner .banner__title {
     display: inline-block;
     font-size: 24px;
@@ -117,6 +126,12 @@ a {
   .banner .banner__subtitle {
     padding: 8px;
     width: 55%; }
+    @media (max-width: 768px) {
+      .banner .banner__subtitle {
+        width: 80%; } }
+    @media (max-width: 480px) {
+      .banner .banner__subtitle {
+        width: 100%; } }
 
 .button {
   background: #DD2A1B;
@@ -469,12 +484,15 @@ footer
   margin-top: 20px; }
 
 @media (max-width: 768px) {
-  .cooperation {
+  .cooperation.section-flex {
     flex-direction: column-reverse; } }
 .cooperation .cooperation__image {
   flex: 0 0 40%; }
   .cooperation .cooperation__image img {
     width: 100%; }
+  @media (max-width: 768px) {
+    .cooperation .cooperation__image {
+      display: none; } }
 .cooperation .cooperation_text {
   flex: 1 1 50%; }
 .cooperation .cooperation__buttons {
@@ -483,12 +501,20 @@ footer
   margin-top: 35px; }
   .cooperation .cooperation__buttons a {
     text-decoration: none; }
+  @media (max-width: 768px) {
+    .cooperation .cooperation__buttons {
+      justify-content: space-between; }
+      .cooperation .cooperation__buttons a {
+        flex: 1; } }
 .cooperation .cooperation__button {
   display: flex;
   justify-content: center;
   text-decoration: none;
   width: 160px;
   height: 60px; }
+  @media (max-width: 768px) {
+    .cooperation .cooperation__button {
+      width: 100%; } }
 
 .parts {
   margin-left: auto; }
@@ -503,7 +529,7 @@ footer
     flex: 1 1 30%; }
 
 @media (max-width: 768px) {
-  .oils {
+  .oils.section-flex {
     flex-direction: column-reverse; } }
 .oils .oils__image {
   flex: 0 0 50%; }

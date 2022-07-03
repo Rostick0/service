@@ -213,8 +213,10 @@ footer
 
 .cooperation {
 
-    @media (max-width: 768px) {
-        flex-direction: column-reverse;
+    &.section-flex {
+        @media (max-width: 768px) {
+            flex-direction: column-reverse;
+        }
     }
 
     .cooperation__image {
@@ -222,6 +224,10 @@ footer
 
         img {
             width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            display: none;
         }
     }
 
@@ -238,6 +244,14 @@ footer
         a {
             text-decoration: none;
         }
+
+        @media (max-width: 768px) {
+            justify-content: space-between;
+
+            a {
+                flex: 1;
+            }
+        }
     }
 
     .cooperation__button {
@@ -248,6 +262,10 @@ footer
 
         width: 160px;
         height: 60px;
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
     }
 }
 
@@ -283,8 +301,10 @@ footer
 
 .oils {
 
-    @media (max-width: 768px) {
-        flex-direction: column-reverse;
+    &.section-flex {
+        @media (max-width: 768px) {
+            flex-direction: column-reverse;
+        }
     }
 
     .oils__image {

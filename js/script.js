@@ -260,10 +260,10 @@ if (serviceBrand) {
             320: {
                 slidesPerView: 1,
             },
-            480: {
+            400: {
                 slidesPerView: 2,
             },
-            768: {
+            576: {
                 slidesPerView: 3,
             },
             1280: {
