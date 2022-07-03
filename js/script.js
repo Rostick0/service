@@ -1,6 +1,7 @@
 // глобальные переменные
 
 const BACKEND_URL = 'http://service/http';
+const main = document.querySelector('.main');
 
 // глобальные функции
 
@@ -35,6 +36,23 @@ const throttle = (func, ms) => {
 new LazyLoad({
     elements_selector: "img"
 });
+
+
+
+
+// загрузка яндекс карт при наводке
+
+const contactsMap = document.querySelector('.contacts__map');
+
+if (contactsMap) {
+    function addMap() {
+        contactsMap.innerHTML = `<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A92a2604a7f331877543f32129745de455721afa2160a2df1bf49ae7229f4c614&amp;source=constructor" width="100%" height="339" frameborder="0"></iframe>`;
+        
+        contactsMap.removeEventListener('mouseover', addMap)
+    }
+
+    const mapHover = contactsMap.addEventListener('mouseover', addMap);
+}
 
 
 
@@ -79,7 +97,7 @@ const arrowToTop = document.querySelector('.arrow__to-top');
 if (arrowToTop) {
 
     window.addEventListener('scroll', throttle(function() {
-        if (pageYOffset >= 800) {
+        if (pageYOffset >= 400) {
             arrowToTop.classList.remove('_no-active');
             return;
         }
@@ -94,6 +112,31 @@ if (arrowToTop) {
             behavior: 'smooth'
         });
     })
+}
+
+
+
+
+// фиксированное меню
+
+const navigation = document.querySelector('.navigation');
+const navigationOffsetTop = navigation.offsetTop;
+
+if (navigation) {
+
+    window.addEventListener('scroll', throttle(function() {
+        if (window.screen.width < 768) return;
+
+        if (pageYOffset >= navigationOffsetTop) {
+            navigation.style.position = 'fixed';
+            main.style.marginTop = navigation.offsetHeight + 50 + 'px';
+            return;
+        }
+
+        main.style.marginTop = '0';
+        navigation.style.position = 'static';
+        return;
+    }, 50));
 }
 
 
@@ -214,11 +257,6 @@ if (arrowToTop) {
             const modalInputText = document.querySelector('.modal__input_text');
 
             verificationData(modalInputName, modalInputTelephone, modalInputText);
-
-            // return await fetch('', {
-            //     method: 'POST',
-            //     body: JSON.stringify(data)
-            // })
         })
     }
 

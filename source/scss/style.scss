@@ -76,7 +76,14 @@ footer
 .navigation {
     background: #11161D;
 
+    top: 0;
+    left: 0;
+
     margin-bottom: 50px;
+
+    width: 100%;
+
+    z-index: 90;
 
     .navigation__items {
         display: grid;

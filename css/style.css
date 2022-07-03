@@ -423,7 +423,11 @@ footer
 
 .navigation {
   background: #11161D;
-  margin-bottom: 50px; }
+  top: 0;
+  left: 0;
+  margin-bottom: 50px;
+  width: 100%;
+  z-index: 90; }
   .navigation .navigation__items {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
