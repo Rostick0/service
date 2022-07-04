@@ -15,9 +15,11 @@ function sendMail($data) {
     $telephone = $data['telephone'];
     $text = $data['text'];
 
+    // почта для получения
     $to = "rostik057@gmail.com";
+    // почта для отправки (нужно установить хостинговую)
     $from = "zajcevav30@gmail.com";
-    $subject = "";
+    $subject = "Сообщение от клиента";
     $headers = "From: $from" . "\r\n" . 
     "Reply-To: $from" . "\r\n" . 
     "X-Mailer: PHP/" . phpversion();
@@ -48,17 +50,6 @@ function sendMail($data) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     sendMail($_POST);
-    
-    // $data = json_decode($data, true);
 }
-
-// $to      = 'nobody@example.com';
-// $subject = 'the subject';
-// $message = 'hello';
-// $headers = 'From: webmaster@example.com'       . "\r\n" .
-//         'Reply-To: webmaster@example.com' . "\r\n" .
-//         'X-Mailer: PHP/' . phpversion();
-//     mail($to, $subject, $message, $headers);
-
 
 ?>

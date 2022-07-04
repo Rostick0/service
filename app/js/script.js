@@ -66,14 +66,14 @@ if (navigationLinks) {
             
             if (navigationLink.dataset.goto && document.querySelector(navigationLink.dataset.goto)) {
                 const gotoBlock = document.querySelector(navigationLink.dataset.goto);
-                const gotoBlockValue = (gotoBlock.getBoundingClientRect().top + pageYOffset)*0.99;         
 
-                // if (burgerMenu.classList.contains('_active')) {
-                //     removeActive(burgerButton);
-                //     removeActive(burgerMenu);
-                //     removeActive(personLanguage);
-                //     document.body.classList.remove('_lock');
-                // }
+                // нахождение высоты для определенного блока
+
+                let gotoBlockValue = (gotoBlock.getBoundingClientRect().top + pageYOffset)*0.97;
+
+                if (window.screen.width <= 768) {
+                    gotoBlockValue = (gotoBlock.getBoundingClientRect().top + pageYOffset)*0.99;
+                }   
 
                 if (headerBurgerMenu) {
                     headerBurgerMenu.classList.toggle('_active');
@@ -104,7 +104,7 @@ const arrowToTop = document.querySelector('.arrow__to-top');
 if (arrowToTop) {
 
     window.addEventListener('scroll', throttle(function() {
-        if (pageYOffset >= 400) {
+        if (pageYOffset >= 400) { // стрелка убирается, если высота <= 400
             arrowToTop.classList.remove('_no-active');
             return;
         }
@@ -132,9 +132,14 @@ const navigationOffsetTop = navigation.offsetTop;
 if (navigation) {
 
     window.addEventListener('scroll', throttle(function() {
+
+        // при экранах <= 768 ширины ничег не происходит
+
         if (window.screen.width <= 768) return;
 
-        if (pageYOffset >= navigationOffsetTop) {
+        // фиксированное меню при скролле
+
+        if (pageYOffset >= navigationOffsetTop) { // проверка высоты, если она больше, чем позиция навигации, то становится фиксированной
             navigation.style.position = 'fixed';
             main.style.marginTop = navigation.offsetHeight + 50 + 'px';
             return;
@@ -163,6 +168,8 @@ if (navigation) {
             telephone: modalInputTelephone,
             text: modalInputText
         };
+
+        // отправка данных на почту, и после успеха, убирается модальное окно
 
         return fetch(`${BACKEND_URL}/mail.php`, {
             method: 'POST',
@@ -215,11 +222,15 @@ if (navigation) {
             return;
         }
 
+        // если нет ошибок, то данные отправляются в бэкенд, потом на почту
+
         sendData(modalInputName.value.trim(), modalInputTelephone.value.trim(), modalInputText.value.trim());
     }
 
     function setError(elem, error, container) {
         const errors = container.querySelectorAll('p.p._error')
+
+        // удаление уже существующих схожих ошибок
 
         if (errors) {
             errors.forEach(elem => {
@@ -228,6 +239,8 @@ if (navigation) {
                 }
             })
         }
+
+        // запись ошибки в html
 
         elem.insertAdjacentHTML('beforebegin', `<p class="p _error">${error}</p>`);
         return elem.classList.add('_error');
@@ -245,16 +258,22 @@ if (navigation) {
         }
     }
 
+    // появление модального окна
+
     function createEvent() {
         const modalButton = document.querySelector('.modal__button');
 
         activeAnimation();
+
+        // модальное окно убереться, если кликнуть по экрану не в зоне модального окна
 
         modal.addEventListener('click', e => {
             if (e.target.classList[0] == 'modal') {
                 removeModal();
             }
         })
+
+        // при нажатии происходит проверка валидации
 
         modalButton.addEventListener('click', async e => {
             const modalInputName = document.querySelector('.modal__input_name');
@@ -265,11 +284,15 @@ if (navigation) {
         })
     }
 
+    // добавление css свойств для анимации
+
     function activeAnimation() {
         modal.style.top = '0';
         modal.style.animation = 'blackout-modal 1.5s forwards';
         document.body.classList.add('overflow-y-hidden');
     }
+
+    // удаление css свойств для анимации
 
     function removeModal() {
         modal.style.animation = '';
@@ -334,16 +357,16 @@ const reviewsSlider = document.querySelector('.reviews_slider_container');
 
 if (reviewsSlider) {
     new Swiper('.reviews_slider_container', {
-        slidesPerView: 1,
-        loop: true,
-        lazy: {
+        slidesPerView: 1, // количество показаных слайдов
+        loop: true, // бесконечное проигрывание
+        lazy: { // ленивая загрузка
             loadOnTransitionStart: true,
             loadPrevNext: true
         },
         preloadImages: true,
         watchSlidesProgress: true,
         watchSlidesVisibility: false,
-        navigation: {
+        navigation: { // стрелки отвечающие за навигацию
             nextEl: '.reviews_slider__arrow_right',
             prevEl: '.reviews_slider__arrow_left'
         }
@@ -360,17 +383,9 @@ if (reviewsSlider) {
 const headerBurgerMenu = document.querySelector('.header__burger-menu');
 
 if (headerBurgerMenu && navigation) {
+    // при клике на бургер меню происходит удаление или добавление класса
     headerBurgerMenu.addEventListener('click', e => {
-        // addOrRemoveClass(headerBurgerMenu, '_active');
-
-        // addOrRemoveClass(navigation, '_right-0');
-
         headerBurgerMenu.classList.toggle('_active');
         navigation.classList.toggle('_right-0');
-
-        // if (navigation.classList.contains('_right-0')) {
-        //     navigation.classList.remove('_right-0');
-        // }
-        // navigation.classList.add('_right-0');
     })
 }
