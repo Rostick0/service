@@ -33,7 +33,7 @@ const throttle = (func, ms) => {
 // ленивая загрузка
 
 new LazyLoad({
-    elements_selector: "img"
+    elements_selector: "img.lazy-loading"
 });
 
 
@@ -322,19 +322,21 @@ const serviceBrandSlider = document.querySelector('.service-brand_slider_contain
 
 if (serviceBrandSlider) {
     new Swiper('.service-brand_slider_container', {
+        slidesPerView: 5,
+        spaceBetween: 45,
         breakpoints: {
             280: {
                 slidesPerView: 1,
             },
             576: {
                 slidesPerView: 2,
+                spaceBetween: 20,
             },
             1280: {
                 slidesPerView: 5,
+                spaceBetween: 45,
             }
         },
-        slidesPerView: 5,
-        spaceBetween: 45,
         loop: true,
         lazy: {
             loadOnTransitionStart: true,
@@ -347,8 +349,7 @@ if (serviceBrandSlider) {
             nextEl: '.slider__arrow_right',
             prevEl: '.slider__arrow_left'
         }
-    })
-  
+    });
 }
 
 // слайдер (Отзывы)
