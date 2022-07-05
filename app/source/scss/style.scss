@@ -221,6 +221,10 @@ footer
         justify-content: space-between;
         grid-gap: 30px;
 
+        @media (max-width: 1024px) {
+            grid-gap: 5px;
+        }
+
         @media (max-width: 768px) {
             flex-direction: column;
             flex: 1 1 100%;

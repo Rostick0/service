@@ -105,18 +105,19 @@ a {
 .banner {
   background: url("../img/banner.webp") no-repeat;
   background-size: cover;
-  background-position: center; }
+  background-position: right; }
   @media (max-width: 768px) {
     .banner {
-      margin-top: 70px;
-      margin-left: -2%;
-      margin-right: -2%; } }
+      margin-top: 75px; } }
   .banner .banner__text {
     display: flex;
     flex-direction: column;
     row-gap: 12px;
-    padding: 85px 0 35px 8%;
+    padding: 120px 8% 80px;
     width: 70%; }
+    @media (max-width: 1200px) {
+      .banner .banner__text {
+        padding: 80px 4% 60px; } }
     @media (max-width: 768px) {
       .banner .banner__text {
         padding: 64px 24px 32px;
@@ -543,6 +544,9 @@ footer
     display: flex;
     justify-content: space-between;
     grid-gap: 30px; }
+    @media (max-width: 1024px) {
+      .navigation .navigation__items {
+        grid-gap: 5px; } }
     @media (max-width: 768px) {
       .navigation .navigation__items {
         flex-direction: column;

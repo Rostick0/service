@@ -80,12 +80,10 @@ a {
 .banner {
     background: url('../img/banner.webp') no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: right;
 
     @media (max-width: 768px) {
-        margin-top: 70px;
-        margin-left: -2%;
-        margin-right: -2%;
+        margin-top: 75px;
     }
 
     .banner__text {
@@ -93,9 +91,13 @@ a {
         flex-direction: column;
         row-gap: 12px;
 
-        padding: 85px 0 35px 8%;
+        padding: 120px 8% 80px ;
 
         width: 70%;
+
+        @media (max-width: 1200px) {
+            padding: 80px 4% 60px;
+        }
 
         @media (max-width: 768px) {
             padding: 64px 24px 32px;
