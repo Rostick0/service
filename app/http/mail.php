@@ -16,7 +16,7 @@ function sendMail($data) {
     $text = $data['text'];
 
     // почта для получения
-    $to = "rostik057@gmail.com";
+    $to = "globus_2022@list.ru";
     // почта для отправки (нужно установить хостинговую)
     $from = "zajcevav30@gmail.com";
     $subject = "Сообщение от клиента";

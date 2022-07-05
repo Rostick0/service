@@ -116,16 +116,14 @@ a {
     flex-direction: column;
     row-gap: 12px;
     padding: 85px 0 35px 8%;
-    width: 40%; }
+    width: 70%; }
     @media (max-width: 768px) {
       .banner .banner__text {
-        padding-top: 64px;
-        padding-bottom: 32px;
-        width: 80%; } }
+        padding: 64px 24px 32px;
+        width: 100%; } }
     @media (max-width: 480px) {
       .banner .banner__text {
-        padding: 40px 24px 28px;
-        width: 100%; } }
+        padding: 40px 24px 28px; } }
   .banner .banner__title {
     display: inline-block;
     font-size: 24px;
@@ -135,9 +133,6 @@ a {
     padding: 8px;
     width: 55%; }
     @media (max-width: 768px) {
-      .banner .banner__subtitle {
-        width: 80%; } }
-    @media (max-width: 480px) {
       .banner .banner__subtitle {
         width: 100%; } }
 
@@ -232,7 +227,7 @@ a {
       padding: 0 2%; } }
 
 section {
-  margin-bottom: 136px; }
+  margin-bottom: 72px; }
   @media (max-width: 768px) {
     section {
       margin-bottom: 64px; } }
@@ -249,8 +244,7 @@ section {
   section.section-flex,
   section .section-flex {
     display: flex;
-    column-gap: 30px;
-    width: 90%; }
+    column-gap: 30px; }
     @media (max-width: 768px) {
       section.section-flex,
       section .section-flex {
@@ -546,12 +540,13 @@ footer
       .navigation._right-0 {
         right: 0; } }
   .navigation .navigation__items {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    display: flex;
+    justify-content: space-between;
     grid-gap: 30px; }
     @media (max-width: 768px) {
       .navigation .navigation__items {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        flex: 1 1 100%;
         grid-gap: 15px; } }
   .navigation .navigation__link {
     color: #FEFEFE;
@@ -560,9 +555,12 @@ footer
     text-align: center;
     text-decoration: none;
     transition: 200ms;
-    padding: 30px 0;
+    padding: 30px 45px;
     width: 100%;
     height: 100%; }
+    @media (max-width: 768px) {
+      .navigation .navigation__link {
+        padding: 30px 10px; } }
     .navigation .navigation__link:hover {
       background: #DD2A1B; }
 
@@ -684,11 +682,6 @@ footer
         flex-direction: column-reverse; } }
   .contacts .contacts__map {
     width: 100%; }
-  .contacts .contact__item:last-child {
-    display: flex;
-    align-items: flex-end;
-    width: 100%;
-    height: 100%; }
   .contacts .contacts__map_img {
     width: 100%;
     height: 100%; }
