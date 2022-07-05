@@ -526,7 +526,7 @@ footer
   background: #11161D;
   top: 0;
   right: 0;
-  margin-bottom: 50px;
+  margin-bottom: 0;
   transition: 500ms;
   width: 100%;
   z-index: 101; }

@@ -141,7 +141,7 @@ if (navigation) {
 
         if (pageYOffset >= navigationOffsetTop) { // проверка высоты, если она больше, чем позиция навигации, то становится фиксированной
             navigation.style.position = 'fixed';
-            main.style.marginTop = navigation.offsetHeight + 50 + 'px';
+            main.style.marginTop = navigation.offsetHeight + 20 + 'px';
             return;
         }
 
