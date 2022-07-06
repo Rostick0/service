@@ -148,7 +148,7 @@ if (navigation) {
         main.style.marginTop = '0';
         navigation.style.position = 'static';
         return;
-    }, 20));
+    }, 10));
 }
 
 
